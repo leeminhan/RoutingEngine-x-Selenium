@@ -1,0 +1,132 @@
+package ESCSeleniumTesting;
+
+import org.openqa.selenium.*;
+//WebDriver Class is needed to instantiate a browser with a specific driver
+import org.openqa.selenium.WebDriver;
+//ChromeDriver is attached to Webdriver to instantitate a chrome browser
+import org.openqa.selenium.chrome.ChromeDriver;
+
+//Language
+public class UC3_Test {
+
+
+    public static void main(String[] args) {
+        // declaration and instantiation of objects/variables
+    	System.setProperty("webdriver.chrome.driver", "C:/Users/xavierrocker/Downloads/chromedriver_win322/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    	
+		String baseUrl = "file:///C:/Users/xavierrocker/Downloads/index1.htm";
+        Boolean eng = false, chi = false, mal = false, tam = false;
+        
+        // launch Fire fox and direct it to the Base URL
+        driver.get(baseUrl);
+        WebElement engBut = driver.findElement(By.id("english"));
+        WebElement chiBut = driver.findElement(By.id("chinese"));
+        WebElement malBut = driver.findElement(By.id("malay"));
+        WebElement tamBut = driver.findElement(By.id("tamil"));
+        
+        //
+        // Test0: Get the default selection of communication mode
+        //
+        if(engBut.isSelected()) {
+        	eng = true;
+        }
+        if(chiBut.isSelected()) {
+        	chi = true;
+        }
+        if(malBut.isSelected()) {
+        	mal = true;
+        }
+        if(tamBut.isSelected()) {
+        	tam = true;
+        }
+        if(eng == true && chi == false && mal == false && tam == false) {
+        	System.out.println("Test0: Default Value, Passed!");
+        }else {
+        	System.out.println("Test 0 Failed");
+        }
+        
+        //
+        // Test1.1: Check other buttons work (Malay)
+        //
+        eng = false;
+        chi = false;
+        mal = false;
+        tam = false;
+        chiBut.click();
+        if(engBut.isSelected()) {
+        	eng = true;
+        }
+        if(chiBut.isSelected()) {
+        	chi = true;
+        }
+        if(malBut.isSelected()) {
+        	mal = true;
+        }
+        if(tamBut.isSelected()) {
+        	tam = true;
+        }
+        if(eng == false && chi == true && mal == false && tam == false) {
+        	System.out.println("Test1.1: 2nd Choice Works, Passed!");
+        }else {
+        	System.out.println("Test 1.1 Failed");
+        }
+        
+        //
+        // Test1.2: Check other buttons work (Chinese)
+        //
+        eng = false;
+        chi = false;
+        mal = false;
+        tam = false;
+        malBut.click();
+        if(engBut.isSelected()) {
+        	eng = true;
+        }
+        if(chiBut.isSelected()) {
+        	chi = true;
+        }
+        if(malBut.isSelected()) {
+        	mal = true;
+        }
+        if(tamBut.isSelected()) {
+        	tam = true;
+        }
+        if(eng == false && chi == false && mal == true && tam == false) {
+        	System.out.println("Test1.2: 3rd Choice Works, Passed!");
+        }else {
+        	System.out.println("Test 1.2 Failed");
+        }
+        
+        //
+        // Test1.3: Check other buttons work (Chinese)
+        //
+        eng = false;
+        chi = false;
+        mal = false;
+        tam = false;
+        tamBut.click();
+        if(engBut.isSelected()) {
+        	eng = true;
+        }
+        if(chiBut.isSelected()) {
+        	chi = true;
+        }
+        if(malBut.isSelected()) {
+        	mal = true;
+        }
+        if(tamBut.isSelected()) {
+        	tam = true;
+        }
+        if(eng == false && chi == false && mal == false && tam == true) {
+        	System.out.println("Test1.3: 4th Choice Works, Passed!");
+        }else {
+        	System.out.println("Test 1.3 Failed");
+        }
+        
+        //close Fire fox
+        driver.close();
+       
+    }
+
+}

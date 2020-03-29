@@ -1,0 +1,405 @@
+package ESCSeleniumTesting;
+
+import org.openqa.selenium.*;
+//WebDriver Class is needed to instantiate a browser with a specific driver
+import org.openqa.selenium.WebDriver;
+//ChromeDriver is attached to Webdriver to instantitate a chrome browser
+import org.openqa.selenium.chrome.ChromeDriver;
+
+//Language
+public class UC1_Test {
+
+
+    public static void main(String[] args) {
+        // declaration and instantiation of objects/variables
+    	System.setProperty("webdriver.chrome.driver", "C:/Users/xavierrocker/Downloads/chromedriver_win322/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    	
+		String baseUrl = "file:///C:/Users/xavierrocker/Downloads/index1.htm";
+        String opt1 = false, opt2 = false, opt3 = false, opt4 = false,  opt5 = false, opt6 = false, opt7 = false, opt8 = false;
+        
+        // launch Fire fox and direct it to the Base URL
+        driver.get(baseUrl);
+        WebElement opt1But = driver.findElement(By.id("english"));
+        WebElement opt2But = driver.findElement(By.id("chinese"));
+        WebElement opt3But = driver.findElement(By.id("malay"));
+        WebElement opt4But = driver.findElement(By.id("tamil"));
+        WebElement opt5But = driver.findElement(By.id("english"));
+        WebElement opt6But = driver.findElement(By.id("chinese"));
+        WebElement opt7But = driver.findElement(By.id("malay"));
+        WebElement opt8But = driver.findElement(By.id("tamil"));
+        //
+        // Test0: Get the default selection of communication mode
+        //
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == true && opt2 == false && opt3 == false && opt4 == false && opt5 == false && opt6 == false && opt7 == false && opt8 == false) {
+        	System.out.println("Test0: Default Value, Passed!");
+        }else {
+        	System.out.println("Test 0 Failed");
+        }
+        
+        //
+        // Test1.1: Check other buttons work (opt2)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt2But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == true && opt3 == false && opt4 == false && opt5 == false && opt6 == false && opt7 == false && opt8 == false) {
+        	System.out.println("Test1.1: Opt2 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.1 Failed");
+        }
+        
+        //
+        // Test1.2: Check other buttons work (opt2)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt3But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == false && opt3 == true && opt4 == false && opt5 == false && opt6 == false && opt7 == false && opt8 == false) {
+        	System.out.println("Test1.2: Opt3 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.2 Failed");
+        }
+        
+        //
+        // Test1.3: Check other buttons work (opt4)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt4But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == false && opt3 == false && opt4 == true && opt5 == false && opt6 == false && opt7 == false && opt8 == false) {
+        	System.out.println("Test1.3: Opt4 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.3 Failed");
+        }
+        
+        //
+        // Test1.4: Check other buttons work (opt5)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt4But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == false && opt3 == false && opt4 == false && opt5 == true && opt6 == false && opt7 == false && opt8 == false) {
+        	System.out.println("Test1.4: Opt5 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.4 Failed");
+        }
+        
+        //
+        // Test1.5: Check other buttons work (opt6)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt6But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == false && opt3 == false && opt4 == false && opt5 == false && opt6 == true && opt7 == false && opt8 == false) {
+        	System.out.println("Test1.5: Opt6 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.5 Failed");
+        }
+        
+        //
+        // Test1.5: Check other buttons work (opt6)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt6But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == false && opt3 == false && opt4 == false && opt5 == false && opt6 == true && opt7 == false && opt8 == false) {
+        	System.out.println("Test1.5: Opt6 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.5 Failed");
+        }
+        
+        //
+        // Test1.6: Check other buttons work (opt7)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt7But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == false && opt3 == false && opt4 == false && opt5 == false && opt6 == false && opt7 == true && opt8 == false) {
+        	System.out.println("Test1.6: Opt7 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.6 Failed");
+        }
+        
+        //
+        // Test1.7: Check other buttons work (opt8)
+        //
+        opt1 = false;
+        opt2 = false;
+        opt3 = false;
+        opt4 = false;
+        opt5 = false;
+        opt6 = false;
+        opt7 = false;
+        opt8 = false;
+        opt8But.click();
+        if(opt1But.isSelected()) {
+        	opt1 = true;
+        }
+        if(opt2But.isSelected()) {
+        	opt2 = true;
+        }
+        if(opt3But.isSelected()) {
+        	opt3 = true;
+        }
+        if(opt4But.isSelected()) {
+        	opt4 = true;
+        }
+        if(opt5But.isSelected()) {
+        	opt5 = true;
+        }
+        if(opt6But.isSelected()) {
+        	opt6 = true;
+        }
+        if(opt7But.isSelected()) {
+        	opt7 = true;
+        }
+        if(opt8But.isSelected()) {
+        	opt8 = true;
+        }
+        if(opt1 == false && opt2 == false && opt3 == false && opt4 == false && opt5 == false && opt6 == false && opt7 == false && opt8 == true) {
+        	System.out.println("Test1.7: Opt8 Works, Passed!");
+        }else {
+        	System.out.println("Test 1.7 Failed");
+        }
+        
+        //close Fire fox
+        driver.close();
+       
+    }
+
+}

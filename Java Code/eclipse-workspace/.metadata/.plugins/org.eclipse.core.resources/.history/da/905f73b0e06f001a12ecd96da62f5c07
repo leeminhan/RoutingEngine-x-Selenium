@@ -1,0 +1,69 @@
+package ESCSeleniumTesting;
+
+//WebDriver Class is needed to instantiate a browser with a specific driver
+import org.openqa.selenium.*;
+//ChromeDriver is attached to Webdriver to instantitate a chrome browser
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.*;
+import java.net.*;
+import java.util.concurrent.TimeUnit;
+
+public class UIWalkthrough_Test {
+	
+	
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:/Users/xavierrocker/Downloads/chromedriver_win322/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+	    
+		
+		driver.get("http://192.168.56.1:3000/");
+	    
+	    
+	    String chat = "1", video= "2", voice= "3";
+	    //Mode of Communication Elements
+	    WebElement videoBut = driver.findElement(By.xpath("(//img[@id='Radioimg'])[2]"));
+	    WebElement checkcomms = driver.findElement(By.name("chatMode"));
+	    
+	    
+	    String eng = "1", mal = "2", chi = "3", tam = "NaN";
+	    //Language Elements
+	    driver.get("http://192.168.56.1:3000/");
+	    WebElement engBut = driver.findElement(By.xpath("(//img[@id='Radioimg'])[4]"));
+	    WebElement checklang = driver.findElement(By.name("language"));
+	    
+	    
+	    String firstName ="Calvin", secName = "Jean";
+	    //Name Elements
+	    WebElement firstForm = driver.findElement(By.name("FirstName"));
+	    WebElement secForm = driver.findElement(By.name("LastName"));
+	    
+	    
+	    
+	 // launch Chrome and direct it to the Base URL
+	    
+	    // TEST1
+	    //Input Type of Problem
+	    //Input Mode of Communication
+	    videoBut.click();
+	    //Input Language
+	    engBut.click();
+	    // Input Name
+	    firstForm.sendKeys("Calvin");
+	    secForm.sendKeys("Jean");
+	    //Check TEST1 Pass or Fail
+	    if (firstForm.getAttribute("value").contentEquals(firstName) && secForm.getAttribute("value").contentEquals(secName)) {
+	    	if(checkcomms.getAttribute("value").contentEquals(video) && checklang.getAttribute("value").contentEquals(eng)) {
+	    		System.out.println("Test 1: Check valid input, Passed!");
+	    	}
+	    }else {
+	    	System.out.println("Test 1 Failed");
+	    }
+	    
+	  //close Fire fox
+	    driver.close();
+    
+	}
+
+}

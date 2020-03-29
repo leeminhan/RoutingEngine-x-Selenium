@@ -1,0 +1,65 @@
+package newpackage;
+import java.util.ArrayList;
+
+import org.openqa.selenium.*;
+//WebDriver Class is needed to instantiate a browser with a specific driver
+import org.openqa.selenium.WebDriver;
+//ChromeDriver is attached to Webdriver to instantitate a chrome browser
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Testing1 {
+
+
+    public static void main(String[] args) {
+        // declaration and instantiation of objects/variables
+    	System.setProperty("webdriver.chrome.driver", "http://localhost");
+		WebDriver driver = new ChromeDriver();
+    	
+		String baseUrl = "file:///C:/Users/xavierrocker/Downloads/index1.htm";
+        Boolean call = false, chat= false;
+        
+        // launch Fire fox and direct it to the Base URL
+        driver.get(baseUrl);
+        WebElement maleBut = driver.findElement(By.id("male"));
+        WebElement femaleBut = driver.findElement(By.id("female"));
+        
+        //
+        // Test0: Get the default selection of communication mode
+        //
+        if(maleBut.isSelected()) {
+        	call = true;
+        }
+        if(femaleBut.isSelected()) {
+        	chat = true;
+        }
+        if(call == true && chat == false) {
+        	System.out.println("Test0: Default Value, Passed!");
+        }else {
+        	System.out.println("Test 0 Failed");
+        }
+        
+        //
+        // Test1: Check other buttons work
+        //
+        call = false;
+        chat= false;
+        femaleBut.click();
+        if(maleBut.isSelected()) {
+        	call = true;
+        }
+        if(femaleBut.isSelected()) {
+        	chat = true;
+        }
+        if(call == false && chat == true) {
+        	System.out.println("Test1: Other buttons work, Passed!");
+        }else {
+        	System.out.println("Test 1 Failed");
+        }
+        
+        
+        //close Fire fox
+        driver.close();
+       
+    }
+
+}
